@@ -1,0 +1,7 @@
+applications:
+- path: .
+  name: discoverydemobolzi
+  command: node app.js
+  memory: 512M
+  instances: 1
+  disk_quota: 1024M

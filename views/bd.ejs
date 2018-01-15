@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Gabriel's Conversation History</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body style="overflow-x:hidden;">
+  <nav style="position:absolute; top: 0%; width:100%;" class="navbar navbar-toggleable-md navbar-light bg-faded">
+<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+<a class="navbar-brand" href="#">Navegação</a>
+<div class="collapse navbar-collapse" id="navbarNav">
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="http://discoverydemobolzi.mybluemix.net">Inicio <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="http://discoverydemobolzi.mybluemix.net/bd">Banco de dados</a>
+    </li>
+  </ul>
+</div>
+</nav>
+
+    <%Object.keys(dados).length%>
+<div class="container">
+  <h2>Histórico do banco de dados</h2>
+          <% var a = 0%>
+
+  <table class="table table-bordered" style="width=100%; height=10%;">
+    <thead>
+      <tr>
+        <th>Mensagens</th>
+        <th>Data</th>
+
+      </tr>
+    </thead>
+        <%dados.forEach(function(dado){ if(dados[a] != "" && dados[a] != "," && dados[a] != ",," && dados[a] != null){%>
+    <tbody>
+      <tr>
+        <td><%- dados[a] %></td>
+        <td><%- dados1[a] %></td>
+      </tr>
+    </tbody>
+      <%a++}else{ a++} });%>
+  </table>
+
+</div>
+
+<!-- <div class="row" style="padding-left: 7%;">
+    <div class="col">
+      Brincando<br>
+      Isto
+    </div>
+    <div class="col">
+      Com<br>
+      É
+    </div>
+    <div class="col">
+      Bootstrap<br>
+      Grid
+    </div>
+  </div> -->
+</div>
+
+</body>
+</html>

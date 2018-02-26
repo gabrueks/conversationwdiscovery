@@ -85,7 +85,7 @@ router.post('/', function(req, res, next){
   var txt = {text: input.text }
   completa(txt);
   conversation.message({ workspace_id:"f32ab514-384e-436e-b9e8-f593fc331542", input: input }, function(err, response){
-
+    console.log(response);
     if(err){
       console.log('Deu erro', err);
     }else{

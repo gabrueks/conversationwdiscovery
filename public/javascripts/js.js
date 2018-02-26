@@ -1,5 +1,3 @@
-
-
   $(".messages").animate({ scrollTop: $(document).height() }, "fast");
 
   $("#profile-img").click(function() {

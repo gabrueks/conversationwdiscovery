@@ -48,7 +48,7 @@
   	$('.contact.active .preview').html('<span>You: </span>' + message);
   	$(".messages").animate({ scrollTop: $(document).height() }, "fast");
 
-    var url = "http://localhost:3000";
+    var url = "/";
     fetch(url,{
   headers: {
     'Accept': 'application/json',

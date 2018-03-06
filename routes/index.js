@@ -83,35 +83,13 @@ router.post('/', function(req, res, next){
 
   var input = req.body;
   var txt = {text: input.text }
-  completa(txt);
   conversation.message({ workspace_id:"f32ab514-384e-436e-b9e8-f593fc331542", input: input }, function(err, response){
-    console.log(response);
     if(err){
       console.log('Deu erro', err);
     }else{
-      if(response.output.text == "Eu não consigo responder essa pergunta :( Você pode tentar dar uma olhada em nosso FAQ: https://developer.ibm.com/startups/startups-faq/"){
-        console.log(input.text);
-        discovery.query({ environment_id: '219f2ec0-96a2-431b-9bb5-a616b2bffa66',collection_id: 'd80a9125-a43e-4e21-b2e8-d97761279029',query: input.text, passages: true }, function(err, data){
-
-          if(err){
-            console.log(err);
-          }else{
-              var string = { text: data.passages[0].passage_text };
-            completa(string);
-            res.json(data);
-          }
-
-        })
-
-      }else{
-       completa(response.output.text);
        res.json(response);
-
-     }
     }
-
   })
-
 })
 
 module.exports = router;
